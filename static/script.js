@@ -64,7 +64,7 @@ function initGame(e) {
 
 async function update(result) {
     var time=returnData(minute)+":"+returnData(second);
-    const response = await fetch("http://localhost:80/update", {
+    const response = await fetch("/update", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",

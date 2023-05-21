@@ -10,10 +10,11 @@ const jwt = require('jsonwebtoken');
 const { verifyToken } = require("./middleware/auth.js");
 const LocalStorage = require('node-localstorage').LocalStorage;
 localStorage = new LocalStorage('./scratch');
+const bodyParser = require("body-parser");
 
 dotenv.config();
 
-
+app.use(bodyParser.urlencoded({ extended: true }));
 const port=80;
 
 app.use(express.json())
@@ -25,6 +26,7 @@ app.use(express.urlencoded());
 // PUG Specific Stuff
 app.set('view engine', 'pug'); // Set the template engine as pug
 app.set('views', path.join(__dirname, 'views')); // Set the views directory
+
 
 // ENDPOINTS
 app.get('/', (req,res)=>{
@@ -154,7 +156,7 @@ mongoose
     useUnifiedTopology: true,
   })
   .then(() => {
-    app.listen(port, () => console.log(`Server Port: ${port}`));
+    app.listen(process.env.PORT || port, () => console.log(`Server Port: ${port}`));
 
   })
   .catch((error) => console.log(`${error} did not connect`));
