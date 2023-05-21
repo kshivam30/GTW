@@ -1,0 +1,22 @@
+html
+  head
+    link(rel='stylesheet', type='text/css', href='../static/navbar.css')
+    title Guess The Word
+    block styles
+  body
+    ul
+      li
+        a(href='/home') Play Area
+      li
+        a(href='/profile') Profile
+      li
+        a(href='#') Contact
+      li
+        a
+          form(action='/logout', method='GET')
+            .button
+              button(type='submit', value='Log Out', name='logOut') Log Out
+    block content
+    
+    block scripts
+

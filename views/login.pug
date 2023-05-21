@@ -1,0 +1,65 @@
+html
+  head
+    meta(charset='utf-8')
+    title GTW Log In
+    link(rel='stylesheet', type='text/css', href='../static/login.css')
+  body
+    .login-root
+      .box-root.flex-flex.flex-direction--column(style='min-height: 100vh;flex-grow: 1;')
+        .loginbackground.box-background--white.padding-top--64
+          .loginbackground-gridContainer
+            .box-root.flex-flex(style='grid-area: top / start / 8 / end;')
+              .box-root(style='background-image: linear-gradient(white 0%, rgb(247, 250, 252) 33%); flex-grow: 1;')
+            .box-root.flex-flex(style='grid-area: 4 / 2 / auto / 5;')
+              .box-root.box-divider--light-all-2.animationLeftRight.tans3s(style='flex-grow: 1;')
+            .box-root.flex-flex(style='grid-area: 6 / start / auto / 2;')
+              .box-root.box-background--blue800(style='flex-grow: 1;')
+            .box-root.flex-flex(style='grid-area: 7 / start / auto / 4;')
+              .box-root.box-background--blue.animationLeftRight(style='flex-grow: 1;')
+            .box-root.flex-flex(style='grid-area: 8 / 4 / auto / 6;')
+              .box-root.box-background--gray100.animationLeftRight.tans3s(style='flex-grow: 1;')
+            .box-root.flex-flex(style='grid-area: 2 / 15 / auto / end;')
+              .box-root.box-background--cyan200.animationRightLeft.tans4s(style='flex-grow: 1;')
+            .box-root.flex-flex(style='grid-area: 3 / 14 / auto / end;')
+              .box-root.box-background--blue.animationRightLeft(style='flex-grow: 1;')
+            .box-root.flex-flex(style='grid-area: 4 / 17 / auto / 20;')
+              .box-root.box-background--gray100.animationRightLeft.tans4s(style='flex-grow: 1;')
+            .box-root.flex-flex(style='grid-area: 5 / 14 / auto / 17;')
+              .box-root.box-divider--light-all-2.animationRightLeft.tans3s(style='flex-grow: 1;')
+        .box-root.padding-top--24.flex-flex.flex-direction--column(style='flex-grow: 1; z-index: 9;')
+          .box-root.padding-top--48.padding-bottom--24.flex-flex.flex-justifyContent--center
+            h1
+              a(href='/', rel='dofollow') Guess The Word
+          .formbg-outer
+            .formbg
+              .formbg-inner.padding-horizontal--48
+                span.padding-bottom--15 Sign in to your account
+                form(action='/', method='post')#stripe-login 
+                  .field.padding-bottom--24
+                    label(for='email') Email
+                    input(type='email', name='email')
+                  .field.padding-bottom--24
+                    .grid--50-50
+                      label(for='password') Password
+                      .reset-pass
+                        //- a(href='#') Forgot your password?
+                    input(type='password', name='password')
+                  //- .field.field-checkbox.padding-bottom--24.flex-flex.align-center
+                    //- label(for='checkbox')
+                    //-   input(type='checkbox', name='checkbox')
+                    //-   |  Stay signed in for a week
+                  .field.padding-bottom--24
+                    input(type='submit', name='submit', value='Continue')
+                  //- .field
+                  //-   a.ssolink(href='#') Use single sign-on (Google) instead
+            .footer-link.padding-top--24
+              span
+                | Don&apos;t have an account? 
+                a(href='/register') Sign up
+              .listing.padding-top--24.padding-bottom--24.flex-flex.center-center
+                span
+                  a(href='#') &copy; GTW
+                span
+                  a(href='#') Contact
+                span
+                  a(href='#') Privacy &amp; terms

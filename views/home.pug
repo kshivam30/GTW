@@ -1,0 +1,57 @@
+extends navbar.pug
+block styles
+    style
+      include ../static/home.css
+    
+block content
+    .wrapper
+      h1 Guess the Word
+      .content
+        input.typing-input(type='text', maxlength='1')
+        .inputs
+        .details
+          p.hint
+            | Hint: 
+            span
+          p.guess-left
+            | Remaining guesses: 
+            span
+          p.wrong-letter
+            | Wrong letters: 
+            span
+        
+        form(name='form_main')
+          div
+            span#minute 00
+            | :
+            span#second 00
+            
+          br
+          //- button.reset-btn Reset Game
+          button(type='button', name='start', class='reset-btn') start
+block scripts
+    script
+      include ../static/words.js
+      include ../static/script.js
+
+
+
+
+
+    //- script.
+    //-   var t = !{JSON.stringify(token)};
+    //-   console.log(t);
+    //-   if (t){
+    //-     localStorage.setItem('token', t)
+    //-   }
+    //-   //- console.log("hello");
+    //-   window.onload = function() {
+    //-       if (!localStorage.getItem('token')) 
+    //-         location.replace("/")
+    //-   };
+    //-   //- window.onload() = ()=>{
+    //-   //-   console.log(localStorage.getItem('token'))
+    //-   //- }
+
+
+

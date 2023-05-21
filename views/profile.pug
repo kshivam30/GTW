@@ -1,0 +1,67 @@
+extends navbar.pug
+block styles
+    style
+      include ../static/profile.css
+    
+block content
+    .container
+        if (gender=="on")
+            .card
+              img.card__image(src='https://lh3.googleusercontent.com/ytP9VP86DItizVX2YNA-xTYzV09IS7rh4WexVp7eilIcfHmm74B7odbcwD5DTXmL0PF42i2wnRKSFPBHlmSjCblWHDCD2oD1oaM1CGFcSd48VBKJfsCi4bS170PKxGwji8CPmehwPw=w200-h247-no', alt='Person')
+              p.card__name #{user.fullName}
+              .grid-container
+                .grid-child-posts
+                  | Wins: #{user.win}
+                .grid-child-followers
+                  | Loss: #{user.loss}
+                .grid-child-followers
+                  | Best Time: #{user.bestTime}
+        else
+            .card
+              img.card__image(src='https://lh3.googleusercontent.com/oUUiPB9sq3ACq4bUaRmo8pgvC4FUpRRrQKcGIBSOsafawZfRpF1vruFeYt6uCfL6wGDQyvOi6Ez9Bpf1Fb7APKjIyVsft7FLGR6QqdRFTiceNQBm1In9aZyrXp33cZi9pUNqjHASdA=s170-no', alt='Person')
+              p.card__name #{user.fullName}
+              .grid-container
+                .grid-child-posts
+                  | Wins: #{user.win}
+                .grid-child-followers
+                  | Loss: #{user.loss}
+                .grid-child-followers
+                  | Best Time: #{user.bestTime}
+        table
+            tr
+              th Leaderboard
+            tr
+              th Rank
+              th Name
+              th Win
+            - var n=0
+            while n<=9 && n<arr.length
+              tr 
+                th #{n+1}
+                th #{arr[n].name} 
+                th #{arr[n++].win}
+        
+
+block scripts
+
+      //- .card
+      //-   img.card__image(src='https://lh3.googleusercontent.com/oUUiPB9sq3ACq4bUaRmo8pgvC4FUpRRrQKcGIBSOsafawZfRpF1vruFeYt6uCfL6wGDQyvOi6Ez9Bpf1Fb7APKjIyVsft7FLGR6QqdRFTiceNQBm1In9aZyrXp33cZi9pUNqjHASdA=s170-no', alt='Person')
+      //-   p.card__name Murray Reeve
+      //-   .grid-container
+      //-     .grid-child-posts
+      //-       | Wins: #{user.win}
+      //-     .grid-child-followers
+      //-       | Loss: #{user.loss}
+        //- ul.social-icons
+        //-   li
+        //-     a(href='#')
+        //-       i.fa.fa-instagram
+        //-   li
+        //-     a(href='#')
+        //-       i.fa.fa-twitter
+        //-   li
+        //-     a(href='#')
+        //-       i.fa.fa-linkedin
+        //-   li
+        //-     a(href='#')
+        //-       i.fa.fa-codepen
