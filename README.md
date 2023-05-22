@@ -1,5 +1,5 @@
 # GTW
-Vide Demo:-
+Video Demo:-
 https://drive.google.com/file/d/1xXeHVvIHQLoLlzTS2W9SG09RdA7DLmjF/view?usp=sharing
 
 -> Register Page
